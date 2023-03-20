@@ -30,11 +30,6 @@ public void addProductToCart() throws InterruptedException {
 
 }
 
-//@Test
-//public void updateQuantity() {
-//     this.cartPage.setQuantityInput();
-//     this.cartPage.clickUpdateButton();}
-//
 @Test
 public void continueToShopping(){
     this.cartPage.clickContinueShoppingButton();
