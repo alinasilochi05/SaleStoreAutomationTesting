@@ -8,11 +8,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class MyAccountSideBarTest extends TestBase{
+public class MyAccountSideBarTest extends TestBase {
     MyAccountSideBar myAccountSideBar;
     LoginHandler loginHandler;
     RegisterHandler registerHandler;
-    public MyAccountSideBarTest(){
+
+    public MyAccountSideBarTest() {
         super("https://demo.nopcommerce.com/register?returnUrl=%2Fcustomer%2Finfo");
         this.myAccountSideBar = new MyAccountSideBar(webDriver);
         this.loginHandler = new LoginHandler(webDriver);
@@ -20,7 +21,7 @@ public class MyAccountSideBarTest extends TestBase{
     }
 
     @BeforeMethod
-    public void setup(){
+    public void setup() {
         this.registerHandler.createAccount();
         webDriver.get("https://demo.nopcommerce.com/login?returnUrl=%2Fcustomer%2Finfo");
         this.loginHandler.logIn();
@@ -29,7 +30,7 @@ public class MyAccountSideBarTest extends TestBase{
 
 
     @Test
-    public void openOrdersSection(){
+    public void openOrdersSection() {
         this.myAccountSideBar.clickMyAccountCategory("Orders");
         Assert.assertEquals(webDriver.getTitle(), "nopCommerce demo store. Account");
     }

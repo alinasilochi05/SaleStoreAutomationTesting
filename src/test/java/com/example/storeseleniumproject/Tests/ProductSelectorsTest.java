@@ -3,28 +3,31 @@ package com.example.storeseleniumproject.Tests;
 import com.example.storeseleniumproject.Components.ProductSelectors;
 import org.testng.annotations.Test;
 
-public class ProductSelectorsTest extends TestBase{
+public class ProductSelectorsTest extends TestBase {
     ProductSelectors productSelectors;
 
-    public ProductSelectorsTest(){
+    public ProductSelectorsTest() {
         super("https://demo.nopcommerce.com/shoes");
         this.productSelectors = new ProductSelectors(webDriver);
     }
 
     @Test
-    public void orderProductsInListView(){
+    public void orderProductsInListView() {
         this.productSelectors.clickListView();
     }
+
     @Test
-    public void orderProductsInGridView(){
+    public void orderProductsInGridView() {
         this.productSelectors.clickGridView();
     }
+
     @Test
-    public void orderByAZName(){
+    public void orderByAZName() {
         this.productSelectors.setSortByInput("Name: A to Z");
     }
+
     @Test
-    public void display3ItemsPerPage(){
+    public void display3ItemsPerPage() {
         this.productSelectors.setDisplayInput("3");
     }
 }

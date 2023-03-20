@@ -5,9 +5,10 @@ import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProductTest extends TestBase{
+public class ProductTest extends TestBase {
     ProductPage productPage;
-    public ProductTest(){
+
+    public ProductTest() {
         super("https://demo.nopcommerce.com/cell-phones");
         this.productPage = new ProductPage(webDriver);
     }
@@ -19,14 +20,15 @@ public class ProductTest extends TestBase{
         Assert.assertEquals(this.productPage.getActualMessage(), "shopping cart");
 
     }
+
     @Test
-    public void addProductToProductComparison(){
+    public void addProductToProductComparison() {
         this.productPage.clickAddToCompareButton();
         Assert.assertEquals(this.productPage.getActualMessage(), "product comparison");
     }
 
     @Test
-    public void addProductToWishList(){
+    public void addProductToWishList() {
         this.productPage.clickAddToWishListButton();
         Assert.assertEquals(this.productPage.getActualMessage(), "wishlist");
     }

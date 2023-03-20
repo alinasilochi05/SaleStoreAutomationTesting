@@ -4,16 +4,16 @@ import com.example.storeseleniumproject.Components.TopMenu;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TopMenuTest extends TestBase{
+public class TopMenuTest extends TestBase {
     TopMenu topMenu;
 
-    public TopMenuTest(){
+    public TopMenuTest() {
         super("https://demo.nopcommerce.com/register?returnUrl=%2F");
         this.topMenu = new TopMenu(webDriver);
     }
 
     @Test
-    public void hover(){
+    public void hover() {
         this.topMenu.hoverOverTopMenu("Apparel");
     }
 

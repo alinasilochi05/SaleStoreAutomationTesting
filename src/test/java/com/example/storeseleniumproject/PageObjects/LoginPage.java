@@ -9,17 +9,19 @@ public class LoginPage {
     By passwordInput = By.id("Password");
     By loginButton = By.className("login-button");
 
-    public LoginPage(WebDriver webDriver){
+    public LoginPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void setEmailInput(String email){
+    public void setEmailInput(String email) {
         webDriver.findElement(emailInput).sendKeys(email);
     }
-    public void setPasswordInput(String password){
+
+    public void setPasswordInput(String password) {
         webDriver.findElement(passwordInput).sendKeys(password);
     }
-    public void clickLoginButton(){
+
+    public void clickLoginButton() {
         webDriver.findElement(loginButton).click();
     }
 }

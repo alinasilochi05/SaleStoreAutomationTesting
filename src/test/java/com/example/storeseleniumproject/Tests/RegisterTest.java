@@ -8,11 +8,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
-public class RegisterTest extends  TestBase{
+public class RegisterTest extends TestBase {
     RegisterPage registerPage;
 
 
-    public RegisterTest(){
+    public RegisterTest() {
         super("https://demo.nopcommerce.com/register?returnUrl=%2F");
         this.registerPage = new RegisterPage(webDriver);
     }
@@ -24,7 +24,7 @@ public class RegisterTest extends  TestBase{
 //    }
 
     @Test
-    public void createAccount(){
+    public void createAccount() {
         this.registerPage.clickGenderCheckbox();
         this.registerPage.setFirstNameInput("Test");
         this.registerPage.setLastNameInput("Test");

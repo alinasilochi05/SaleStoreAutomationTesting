@@ -11,14 +11,14 @@ import java.util.List;
 public class TopMenu {
     WebDriver webDriver;
 
-    public TopMenu(WebDriver webDriver){
+    public TopMenu(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void hoverOverTopMenu(String text){
+    public void hoverOverTopMenu(String text) {
         List<WebElement> categories = webDriver.findElements(By.cssSelector("ul[class='top-menu notmobile'] > li > a"));
-        for ( WebElement category : categories) {
-            if (category.getText().contains(text)){
+        for (WebElement category : categories) {
+            if (category.getText().contains(text)) {
                 Actions action = new Actions(webDriver);
                 action.moveToElement(category).perform();
                 return;
@@ -26,6 +26,7 @@ public class TopMenu {
         }
 
     }
+
     public void clickSubcategory(String subcategoryText) {
         List<WebElement> subcategories = webDriver.findElements(By.cssSelector("ul[class= 'sublist first-level'] > li > a"));
         for (WebElement subcategory : subcategories) {

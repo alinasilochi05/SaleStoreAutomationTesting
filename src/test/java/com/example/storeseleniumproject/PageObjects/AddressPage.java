@@ -17,46 +17,51 @@ public class AddressPage {
     By phoneInput = By.id("Address_PhoneNumber");
     By countryInput = By.id("Address_CountryId");
     By addressInput = By.id("Address_Address1");
-    By saveButton =  By.cssSelector("[class='button-1 save-address-button']");
+    By saveButton = By.cssSelector("[class='button-1 save-address-button']");
 
 
-    public AddressPage(WebDriver webDriver){
+    public AddressPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.methodsHandlers = new MethodsHandlers(webDriver);
     }
 
-    public void clickAddNewButton(){
+    public void clickAddNewButton() {
         this.webDriver.findElement(addNewButton).click();
     }
 
-    public void setFirstNameInput(String firstname){
+    public void setFirstNameInput(String firstname) {
         webDriver.findElement(firstNameInput).sendKeys(firstname);
     }
-    public void setLastNameInput(String lastname){
+
+    public void setLastNameInput(String lastname) {
         webDriver.findElement(lastNameInput).sendKeys(lastname);
     }
-    public void setEmailInput(String email){
+
+    public void setEmailInput(String email) {
         webDriver.findElement(emailInput).sendKeys(email);
     }
 
-    public void setCountryInput(String text){
+    public void setCountryInput(String text) {
         this.methodsHandlers.setDropdown(cityInput, text);
     }
 
-    public void setCityInput(String city){
+    public void setCityInput(String city) {
         webDriver.findElement(cityInput).sendKeys(city);
     }
 
-    public void setAddressInput(String address){
+    public void setAddressInput(String address) {
         webDriver.findElement(addressInput).sendKeys(address);
     }
-    public void setZipInput(String zip){
+
+    public void setZipInput(String zip) {
         webDriver.findElement(zipInput).sendKeys(zip);
     }
-    public void setPhoneInput(String phone){
+
+    public void setPhoneInput(String phone) {
         webDriver.findElement(zipInput).sendKeys(phone);
     }
-    public void clickSaveButton(){
+
+    public void clickSaveButton() {
         webDriver.findElement(saveButton).click();
     }
 

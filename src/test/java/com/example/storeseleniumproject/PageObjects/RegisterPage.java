@@ -21,38 +21,45 @@ public class RegisterPage {
     By yearDropdown = By.cssSelector("[name='DateOfBirthYear']");
     By expectedMessage = By.className("result");
 
-    public RegisterPage(WebDriver webDriver){
+    public RegisterPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.methodsHandlers = new MethodsHandlers(webDriver);
     }
 
-    public void clickGenderCheckbox(){
+    public void clickGenderCheckbox() {
         this.webDriver.findElement(femaleCheckbox).click();
     }
-    public void setFirstNameInput(String firstname){
+
+    public void setFirstNameInput(String firstname) {
         this.webDriver.findElement(firstNameInput).sendKeys(firstname);
     }
-    public void setLastNameInput(String lastName){
+
+    public void setLastNameInput(String lastName) {
         this.webDriver.findElement(lastNameInput).sendKeys(lastName);
     }
-    public void setEmailInput(String email){
+
+    public void setEmailInput(String email) {
         this.webDriver.findElement(emailInput).sendKeys(email);
     }
-    public void setPasswordInput(String password){
+
+    public void setPasswordInput(String password) {
         this.webDriver.findElement(passwordInput).sendKeys(password);
     }
-    public void setConfirmPassword(String confirmedPassword){
+
+    public void setConfirmPassword(String confirmedPassword) {
         this.webDriver.findElement(confirmPassword).sendKeys(confirmedPassword);
     }
 
-    public void setDayInput(String selectedText){
+    public void setDayInput(String selectedText) {
         this.methodsHandlers.setDropdown(dayDropdown, selectedText);
     }
-    public void clickRegisterButton(){
+
+    public void clickRegisterButton() {
         this.webDriver.findElement(registerButton).click();
     }
+
     public void setDropDownInput(DropdownInput dropdownInput, String selectedText) {
-        switch(dropdownInput){
+        switch (dropdownInput) {
             case DAY -> this.methodsHandlers.setDropdown(dayDropdown, selectedText);
             case MONTH -> this.methodsHandlers.setDropdown(monthDropdown, selectedText);
             case YEAR -> this.methodsHandlers.setDropdown(yearDropdown, selectedText);

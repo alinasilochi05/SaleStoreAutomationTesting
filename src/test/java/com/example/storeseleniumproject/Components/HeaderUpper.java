@@ -12,20 +12,23 @@ public class HeaderUpper {
     By shoppingCart = By.cssSelector("a[class='ico-cart']");
     By customerCurrency = By.id("customerCurrency");
 
-    public HeaderUpper(WebDriver webDriver){
+    public HeaderUpper(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void clickRegisterButton(){
+    public void clickRegisterButton() {
         this.webDriver.findElement(registerOption).click();
     }
-    public void clickLoginButton(){
+
+    public void clickLoginButton() {
         this.webDriver.findElement(loginOption).click();
     }
-    public void clickWishListButton(){
+
+    public void clickWishListButton() {
         this.webDriver.findElement(wishListOption).click();
     }
-    public void clickShoppingCartButton(){
+
+    public void clickShoppingCartButton() {
         this.webDriver.findElement(shoppingCart).click();
     }
 

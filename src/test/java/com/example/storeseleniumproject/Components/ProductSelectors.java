@@ -11,22 +11,26 @@ public class ProductSelectors {
     By displayDropdown = By.id("products-pagesize");
     By gridView = By.cssSelector("a[title='Grid']");
     By listView = By.cssSelector(("a[title='List']"));
-    public ProductSelectors(WebDriver webDriver){
+
+    public ProductSelectors(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.methodsHandlers = new MethodsHandlers(webDriver);
 
     }
 
-    public void setSortByInput(String selectedText){
+    public void setSortByInput(String selectedText) {
         this.methodsHandlers.setDropdown(sortByDropdown, selectedText);
     }
-    public void setDisplayInput(String selectedText){
+
+    public void setDisplayInput(String selectedText) {
         this.methodsHandlers.setDropdown(displayDropdown, selectedText);
     }
-    public void clickGridView(){
+
+    public void clickGridView() {
         webDriver.findElement(gridView).click();
     }
-    public void clickListView(){
+
+    public void clickListView() {
         webDriver.findElement(listView).click();
     }
 }

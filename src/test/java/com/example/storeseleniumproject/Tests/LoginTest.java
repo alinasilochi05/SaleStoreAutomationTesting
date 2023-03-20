@@ -4,9 +4,10 @@ import com.example.storeseleniumproject.PageObjects.LoginPage;
 import com.example.storeseleniumproject.UtilsHandlers.LoginHandler;
 import com.example.storeseleniumproject.UtilsHandlers.ReadCredentials;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 
-public class LoginTest extends  TestBase{
+public class LoginTest extends TestBase {
     LoginPage loginPage;
     LoginHandler loginHandler;
 
@@ -18,9 +19,10 @@ public class LoginTest extends  TestBase{
     }
 
     @Test
-    public void login(){
+    public void login() {
         this.loginHandler.logIn();
     }
+
     @Test
     public void loginValidCredentials() throws IOException {
         ReadCredentials.getCredentials().forEach(credentials -> {
@@ -29,8 +31,6 @@ public class LoginTest extends  TestBase{
             this.loginPage.clickLoginButton();
         });
     }
-
-
 
 
 }

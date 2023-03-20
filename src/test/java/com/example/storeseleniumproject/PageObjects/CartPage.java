@@ -15,33 +15,36 @@ public class CartPage {
 
     By termsOfService = By.id("termsofservice");
 
-    public CartPage(WebDriver webDriver){
-     this.webDriver = webDriver;
+    public CartPage(WebDriver webDriver) {
+        this.webDriver = webDriver;
     }
 
-    public void clickUpdateButton(){
+    public void clickUpdateButton() {
         webDriver.findElement(updateButton).click();
     }
 
-    public void clickContinueShoppingButton(){
+    public void clickContinueShoppingButton() {
         webDriver.findElement(continueShoppingButton).click();
     }
-    public void clickEstimateShippingButton(){
+
+    public void clickEstimateShippingButton() {
         webDriver.findElement(estimateShippingButton).click();
     }
-    public void clickRemoveButton(){
+
+    public void clickRemoveButton() {
         webDriver.findElement(removeButton).click();
     }
-    public void setQuantityInput(String text){
+
+    public void setQuantityInput(String text) {
         webDriver.findElement(quantityInput).clear();
         webDriver.findElement(quantityInput).sendKeys(text);
     }
 
-    public void clickCheckoutButton(){
+    public void clickCheckoutButton() {
         webDriver.findElement(checkoutButton).click();
     }
 
-    public void clickOfTermsOfService(){
+    public void clickOfTermsOfService() {
         webDriver.findElement(termsOfService).click();
     }
 }
