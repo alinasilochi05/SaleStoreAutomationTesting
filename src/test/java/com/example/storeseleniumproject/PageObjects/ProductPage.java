@@ -9,7 +9,7 @@ public class ProductPage {
     By addToCart = By.xpath("//*[text()='Add to cart'][1]");
     By addToCompareList = By.xpath(" //*[text()='Add to compare list'][1]");
     By addToWishList = By.xpath("//*[text()='Add to wishlist'][1]");
-    By expectedMessage = By.xpath("//*[@id=\"bar-notification\"]/div/p");
+    By expectedMessage = By.cssSelector("div > p > a");
 
 
     public ProductPage(WebDriver webDriver){
