@@ -17,6 +17,7 @@ public class TestBase {
         this.siteUrl = siteUrl;
     }
 
+
     @BeforeSuite
     public void setUpBeforeSuite() {
         this.webDriver.get(this.siteUrl);
