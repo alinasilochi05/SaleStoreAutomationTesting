@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/aina/IdeaProjects/StoreSeleniumProject/src/test/java/com/example/storeseleniumproject/Tests/RegisterTest.java"><classes><class name="com.example.storeseleniumproject.Tests.RegisterTest"><methods><include name="createAccount"/></methods></class></classes></test></suite>
