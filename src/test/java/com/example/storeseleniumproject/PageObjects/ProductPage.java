@@ -2,6 +2,7 @@ package com.example.storeseleniumproject.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProductPage {
     WebDriver webDriver;
@@ -12,21 +13,31 @@ public class ProductPage {
     By expectedMessage = By.cssSelector("div > p > a");
 
 
-    public ProductPage(WebDriver webDriver){
+    public ProductPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
-    public void clickAddToCartButton(){
+
+    public void clickAddToCartButton() {
         webDriver.findElement(addToCart).click();
     }
-    public void  clickAddToCompareButton(){
+
+    public void clickAddToCompareButton() {
         webDriver.findElement(addToCompareList).click();
     }
-    public void  clickAddToWishListButton(){
+
+    public void clickAddToWishListButton() {
         webDriver.findElement(addToWishList).click();
     }
-    public String getActualMessage(){
+
+    public String getActualMessage() {
         return webDriver.findElement(expectedMessage).getText();
     }
 
+    public WebElement getAddToCartButton(String productName) {
+        String selector = String.format(
+                "//*[contains(text(), \"%s\")]//ancestor::div[@class=\"details\"]//button[contains(text(), \"Add to cart\")]",
+                productName);
+        return webDriver.findElement(By.xpath(selector));
+    }
 
 }

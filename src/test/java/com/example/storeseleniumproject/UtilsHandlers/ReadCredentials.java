@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 public class ReadCredentials {
-    public static List<Map> getCredentials() throws IOException {
+    public static List<Map<String, String>> getCredentials() throws IOException {
 
         FileInputStream workbookLocation = new FileInputStream("src/test/java/com/example/storeseleniumproject/Resources/credentials.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook(workbookLocation);
         XSSFSheet sheet = workbook.getSheetAt(0);
 
-        List<Map> credentialsList = new ArrayList<>();
+        List<Map<String, String>> credentialsList = new ArrayList<>();
 
         for (int rowIndex = 0; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
             XSSFRow row = sheet.getRow(rowIndex);
@@ -35,5 +35,5 @@ public class ReadCredentials {
 
         return credentialsList;
     }
-};
+}
 

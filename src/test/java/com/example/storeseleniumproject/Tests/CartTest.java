@@ -3,9 +3,11 @@ package com.example.storeseleniumproject.Tests;
 import com.example.storeseleniumproject.Components.HeaderUpper;
 import com.example.storeseleniumproject.PageObjects.CartPage;
 import com.example.storeseleniumproject.PageObjects.ProductPage;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static java.lang.Thread.sleep;
+import static org.testng.Assert.assertEquals;
 
 public class CartTest extends TestBase {
     CartPage cartPage;
@@ -23,17 +25,15 @@ public class CartTest extends TestBase {
     public void addProductToCart() throws InterruptedException {
         webDriver.get("https://demo.nopcommerce.com/cell-phones");
         this.productPage.clickAddToCartButton();
-        Thread.sleep(2000);
+        sleep(2000);
         this.headerUpper.clickShoppingCartButton();
-        Thread.sleep(2000);
-
-
+        sleep(2000);
     }
 
     @Test
     public void continueToShopping() {
         this.cartPage.clickContinueShoppingButton();
-        Assert.assertEquals(webDriver.getTitle(), "nopCommerce demo store. Cell phones");
+        assertEquals(webDriver.getTitle(), "nopCommerce demo store. Cell phones");
     }
 
     @Test
@@ -45,7 +45,8 @@ public class CartTest extends TestBase {
     @Test
     public void removeItem(){
         this.cartPage.clickRemoveButton();
-        Assert.assertEquals(this.cartPage.getRemovedProductMessage(), "Your Shopping Cart is empty!");
+        assertEquals(this.cartPage.getRemovedProductMessage(), "Your Shopping Cart is empty!");
+//        Assert.assertTrue(this.cartPage.getRemovedProductMessage(), "Your Shopping Cart is empty!");
     }
 
 
