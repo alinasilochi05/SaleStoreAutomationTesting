@@ -23,7 +23,7 @@ public class CartTest extends TestBase {
     public void addProductToCart() throws InterruptedException {
         webDriver.get("https://demo.nopcommerce.com/cell-phones");
         this.productPage.clickAddToCartButton();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         this.headerUpper.clickShoppingCartButton();
         Thread.sleep(2000);
 
@@ -40,6 +40,12 @@ public class CartTest extends TestBase {
     public void goToCheckout() {
         this.cartPage.clickOfTermsOfService();
         this.cartPage.clickCheckoutButton();
+    }
+
+    @Test
+    public void removeItem(){
+        this.cartPage.clickRemoveButton();
+        Assert.assertEquals(this.cartPage.getRemovedProductMessage(), "Your Shopping Cart is empty!");
     }
 
 

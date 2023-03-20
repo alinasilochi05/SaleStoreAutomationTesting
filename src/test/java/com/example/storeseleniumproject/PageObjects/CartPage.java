@@ -12,8 +12,9 @@ public class CartPage {
     By continueShoppingButton = By.cssSelector("button[name='continueshopping']");
     By estimateShippingButton = By.id("open-estimate-shipping-popup");
     By checkoutButton = By.id("checkout");
-
     By termsOfService = By.id("termsofservice");
+    By removeItemMessage = By.cssSelector("div[class='no-data']");
+
 
     public CartPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -46,5 +47,9 @@ public class CartPage {
 
     public void clickOfTermsOfService() {
         webDriver.findElement(termsOfService).click();
+    }
+
+    public String getRemovedProductMessage(){
+        return webDriver.findElement(removeItemMessage).getText();
     }
 }
